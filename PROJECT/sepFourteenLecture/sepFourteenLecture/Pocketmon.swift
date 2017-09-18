@@ -27,7 +27,7 @@ class Pikachu{
     init(name: String, tech: String, color: String) {
         self.name = name
         self.tech = tech
-        self.color = color 
+        self.color = color
     }
 }
 

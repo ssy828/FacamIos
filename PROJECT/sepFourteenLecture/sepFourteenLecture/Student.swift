@@ -26,13 +26,23 @@ class Student {
     func setSubjects(subjects:[Subject])
     {
         self.subjects = subjects
+        //        for subject in subjects
+        //        {
+        //            //1. 과목의 점수를 더한다
+        //            totalScore += subject.score
+        //        }
+        
+        
         
     }
     
     func addSubject(subjects:Subject)
     {
         self.subjects.append(subjects)
-    
+        // totalScore += subjects.score
+        
     }
+    
+    
     
 }
