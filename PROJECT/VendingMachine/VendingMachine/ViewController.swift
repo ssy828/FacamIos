@@ -10,11 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
   
-    @IBOutlet var displayA: UILabel!
+    @IBOutlet var displayLb: UILabel!
     var resultValue: Int = 0 // 총액
     var balance: Int = 0 // 잔액
     let caramel: Int = 5600  // 카라멜 음료 금액
-    //    var label: String = displayA.text// 라벨에 표현 될 변수
+    // var label: String = displayLb.text// 라벨에 표현 될 변수
     let chaiLatte: Int = 5100 // 차이 음료 금액
     let vanillaCream: Int = 4800    // 바닐라크림 금액
     let javaChip: Int = 6100 // 자바칩 금액
@@ -26,7 +26,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+//        
+//        self.displayLb.layer.cornerRadius = 50
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,43 +36,43 @@ class ViewController: UIViewController {
     }
     
     @IBAction func caramel(btn: UIButton) {
-//      displayA.text = String(resultValue - caramel)
+//      displayLb.text = String(resultValue - caramel)
 //      balance = resultValue - caramel
          // balance = calculation(beverage: caramel)
         funcStr = calculation(beverage: caramel)
-       // displayA.text = String(balance)
-        //displayA.text = "₩\(funcStr)"
+       // displayLb.text = String(balance)
+        //displayLb.text = "₩\(funcStr)"
         // ₩₩ 이중으로 나옴!
-        displayA.text = funcStr
+        displayLb.text = funcStr
     }
     @IBAction func chaiLatte(btn: UIButton) {
        funcStr = calculation(beverage: chaiLatte)
         // print(balance)
-        // displayA.text = String(balance)
-        // displayA.text = "₩\(balance)"
-        displayA.text = funcStr
+        // displayLb.text = String(balance)
+        // displayLb.text = "₩\(balance)"
+        displayLb.text = funcStr
     }
     @IBAction func vanillaCream(btn: UIButton) {
 //        balance = calculation(beverage: vanillaCream)
         funcStr = calculation(beverage: vanillaCream)
-        // displayA.text = String(balance)
-         displayA.text = funcStr
+        // displayLb.text = String(balance)
+         displayLb.text = funcStr
     }
     @IBAction func javaChip(btn: UIButton) {
       funcStr = calculation(beverage: javaChip)
-        // displayA.text = String(balance)
-         displayA.text = funcStr
+        // displayLb.text = String(balance)
+         displayLb.text = funcStr
     }
     @IBAction func greenTeaLatte(btn: UIButton){
        funcStr = calculation(beverage: greeTeanLatte)
-        // displayA.text = String(balance)
-         displayA.text = funcStr
+        // displayLb.text = String(balance)
+         displayLb.text = funcStr
     }
     @IBAction func strawberryCream(btn: UIButton) {
         funcStr = calculation(beverage: strawberryCeram)
-        // displayA.text = String(balance)
-//         displayA.text = "₩\(funcStr)"
-         displayA.text = funcStr
+        // displayLb.text = String(balance)
+//         displayLb.text = "₩\(funcStr)"
+         displayLb.text = funcStr
     }
     
     @IBAction func chargeAmount(btn: UIButton) {
@@ -80,7 +81,7 @@ class ViewController: UIViewController {
 //      이부분은 잔액을 바꿔줘야하는데 잔액이 바뀌지는 않으므로
         balance += Int(topUp)!
         // 잔액이 계속 바껴야하고 보여줘야하므로
-        displayA.text = "₩\(balance)"
+        displayLb.text = "₩\(balance)"
         // 라벨에 총액을 문자열로 바꿔서 출력
         }
     

@@ -7,27 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE4B46BA1F667F0F0012E0BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B46B91F667F0F0012E0BB /* AppDelegate.swift */; };
-		CE4B46BC1F667F0F0012E0BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B46BB1F667F0F0012E0BB /* ViewController.swift */; };
-		CE4B46BF1F667F0F0012E0BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4B46BD1F667F0F0012E0BB /* Main.storyboard */; };
-		CE4B46C11F667F0F0012E0BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4B46C01F667F0F0012E0BB /* Assets.xcassets */; };
-		CE4B46C41F667F0F0012E0BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4B46C21F667F0F0012E0BB /* LaunchScreen.storyboard */; };
-		CE4C007D1F72389200282271 /* UpgradeCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C007C1F72389200282271 /* UpgradeCalculatorViewController.swift */; };
+		CEB913E81F73527A006D78E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB913E71F73527A006D78E0 /* AppDelegate.swift */; };
+		CEB913EA1F73527A006D78E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB913E91F73527A006D78E0 /* ViewController.swift */; };
+		CEB913ED1F73527A006D78E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB913EB1F73527A006D78E0 /* Main.storyboard */; };
+		CEB913EF1F73527A006D78E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB913EE1F73527A006D78E0 /* Assets.xcassets */; };
+		CEB913F21F73527A006D78E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB913F01F73527A006D78E0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE4B46B61F667F0F0012E0BB /* MyCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE4B46B91F667F0F0012E0BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE4B46BB1F667F0F0012E0BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE4B46BE1F667F0F0012E0BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CE4B46C01F667F0F0012E0BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE4B46C31F667F0F0012E0BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CE4B46C51F667F0F0012E0BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE4C007C1F72389200282271 /* UpgradeCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeCalculatorViewController.swift; sourceTree = "<group>"; };
+		CEB913E41F73527A006D78E0 /* BaseBallGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseBallGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB913E71F73527A006D78E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEB913E91F73527A006D78E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEB913EC1F73527A006D78E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEB913EE1F73527A006D78E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEB913F11F73527A006D78E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CEB913F31F73527A006D78E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CE4B46B31F667F0F0012E0BB /* Frameworks */ = {
+		CEB913E11F73527A006D78E0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,73 +35,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE4B46AD1F667F0F0012E0BB = {
+		CEB913DB1F73527A006D78E0 = {
 			isa = PBXGroup;
 			children = (
-				CE4B46B81F667F0F0012E0BB /* MyCalculator */,
-				CE4B46B71F667F0F0012E0BB /* Products */,
+				CEB913E61F73527A006D78E0 /* BaseBallGame */,
+				CEB913E51F73527A006D78E0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		CE4B46B71F667F0F0012E0BB /* Products */ = {
+		CEB913E51F73527A006D78E0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE4B46B61F667F0F0012E0BB /* MyCalculator.app */,
+				CEB913E41F73527A006D78E0 /* BaseBallGame.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CE4B46B81F667F0F0012E0BB /* MyCalculator */ = {
+		CEB913E61F73527A006D78E0 /* BaseBallGame */ = {
 			isa = PBXGroup;
 			children = (
-				CE4B46B91F667F0F0012E0BB /* AppDelegate.swift */,
-				CE4B46BB1F667F0F0012E0BB /* ViewController.swift */,
-				CE4C007C1F72389200282271 /* UpgradeCalculatorViewController.swift */,
-				CE4B46BD1F667F0F0012E0BB /* Main.storyboard */,
-				CE4B46C01F667F0F0012E0BB /* Assets.xcassets */,
-				CE4B46C21F667F0F0012E0BB /* LaunchScreen.storyboard */,
-				CE4B46C51F667F0F0012E0BB /* Info.plist */,
+				CEB913E71F73527A006D78E0 /* AppDelegate.swift */,
+				CEB913E91F73527A006D78E0 /* ViewController.swift */,
+				CEB913EB1F73527A006D78E0 /* Main.storyboard */,
+				CEB913EE1F73527A006D78E0 /* Assets.xcassets */,
+				CEB913F01F73527A006D78E0 /* LaunchScreen.storyboard */,
+				CEB913F31F73527A006D78E0 /* Info.plist */,
 			);
-			path = MyCalculator;
+			path = BaseBallGame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE4B46B51F667F0F0012E0BB /* MyCalculator */ = {
+		CEB913E31F73527A006D78E0 /* BaseBallGame */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE4B46C81F667F0F0012E0BB /* Build configuration list for PBXNativeTarget "MyCalculator" */;
+			buildConfigurationList = CEB913F61F73527A006D78E0 /* Build configuration list for PBXNativeTarget "BaseBallGame" */;
 			buildPhases = (
-				CE4B46B21F667F0F0012E0BB /* Sources */,
-				CE4B46B31F667F0F0012E0BB /* Frameworks */,
-				CE4B46B41F667F0F0012E0BB /* Resources */,
+				CEB913E01F73527A006D78E0 /* Sources */,
+				CEB913E11F73527A006D78E0 /* Frameworks */,
+				CEB913E21F73527A006D78E0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MyCalculator;
-			productName = MyCalculator;
-			productReference = CE4B46B61F667F0F0012E0BB /* MyCalculator.app */;
+			name = BaseBallGame;
+			productName = BaseBallGame;
+			productReference = CEB913E41F73527A006D78E0 /* BaseBallGame.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CE4B46AE1F667F0F0012E0BB /* Project object */ = {
+		CEB913DC1F73527A006D78E0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "SONGYEE SHIN";
 				TargetAttributes = {
-					CE4B46B51F667F0F0012E0BB = {
+					CEB913E31F73527A006D78E0 = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = CE4B46B11F667F0F0012E0BB /* Build configuration list for PBXProject "MyCalculator" */;
+			buildConfigurationList = CEB913DF1F73527A006D78E0 /* Build configuration list for PBXProject "BaseBallGame" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -111,55 +108,54 @@
 				en,
 				Base,
 			);
-			mainGroup = CE4B46AD1F667F0F0012E0BB;
-			productRefGroup = CE4B46B71F667F0F0012E0BB /* Products */;
+			mainGroup = CEB913DB1F73527A006D78E0;
+			productRefGroup = CEB913E51F73527A006D78E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE4B46B51F667F0F0012E0BB /* MyCalculator */,
+				CEB913E31F73527A006D78E0 /* BaseBallGame */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CE4B46B41F667F0F0012E0BB /* Resources */ = {
+		CEB913E21F73527A006D78E0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4B46C41F667F0F0012E0BB /* LaunchScreen.storyboard in Resources */,
-				CE4B46C11F667F0F0012E0BB /* Assets.xcassets in Resources */,
-				CE4B46BF1F667F0F0012E0BB /* Main.storyboard in Resources */,
+				CEB913F21F73527A006D78E0 /* LaunchScreen.storyboard in Resources */,
+				CEB913EF1F73527A006D78E0 /* Assets.xcassets in Resources */,
+				CEB913ED1F73527A006D78E0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CE4B46B21F667F0F0012E0BB /* Sources */ = {
+		CEB913E01F73527A006D78E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4B46BC1F667F0F0012E0BB /* ViewController.swift in Sources */,
-				CE4B46BA1F667F0F0012E0BB /* AppDelegate.swift in Sources */,
-				CE4C007D1F72389200282271 /* UpgradeCalculatorViewController.swift in Sources */,
+				CEB913EA1F73527A006D78E0 /* ViewController.swift in Sources */,
+				CEB913E81F73527A006D78E0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE4B46BD1F667F0F0012E0BB /* Main.storyboard */ = {
+		CEB913EB1F73527A006D78E0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CE4B46BE1F667F0F0012E0BB /* Base */,
+				CEB913EC1F73527A006D78E0 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		CE4B46C21F667F0F0012E0BB /* LaunchScreen.storyboard */ = {
+		CEB913F01F73527A006D78E0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CE4B46C31F667F0F0012E0BB /* Base */,
+				CEB913F11F73527A006D78E0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -167,7 +163,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		CE4B46C61F667F0F0012E0BB /* Debug */ = {
+		CEB913F41F73527A006D78E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -217,7 +213,7 @@
 			};
 			name = Debug;
 		};
-		CE4B46C71F667F0F0012E0BB /* Release */ = {
+		CEB913F51F73527A006D78E0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -260,25 +256,25 @@
 			};
 			name = Release;
 		};
-		CE4B46C91F667F0F0012E0BB /* Debug */ = {
+		CEB913F71F73527A006D78E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = MyCalculator/Info.plist;
+				INFOPLIST_FILE = BaseBallGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Hello.MyCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = Hello.BaseBallGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		CE4B46CA1F667F0F0012E0BB /* Release */ = {
+		CEB913F81F73527A006D78E0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = MyCalculator/Info.plist;
+				INFOPLIST_FILE = BaseBallGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Hello.MyCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = Hello.BaseBallGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -287,25 +283,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE4B46B11F667F0F0012E0BB /* Build configuration list for PBXProject "MyCalculator" */ = {
+		CEB913DF1F73527A006D78E0 /* Build configuration list for PBXProject "BaseBallGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CE4B46C61F667F0F0012E0BB /* Debug */,
-				CE4B46C71F667F0F0012E0BB /* Release */,
+				CEB913F41F73527A006D78E0 /* Debug */,
+				CEB913F51F73527A006D78E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE4B46C81F667F0F0012E0BB /* Build configuration list for PBXNativeTarget "MyCalculator" */ = {
+		CEB913F61F73527A006D78E0 /* Build configuration list for PBXNativeTarget "BaseBallGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CE4B46C91F667F0F0012E0BB /* Debug */,
-				CE4B46CA1F667F0F0012E0BB /* Release */,
+				CEB913F71F73527A006D78E0 /* Debug */,
+				CEB913F81F73527A006D78E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CE4B46AE1F667F0F0012E0BB /* Project object */;
+	rootObject = CEB913DC1F73527A006D78E0 /* Project object */;
 }
