@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CEE3779A1F749F7F009F8170 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE377991F749F7F009F8170 /* UpdateViewController.swift */; };
+		CEE3779C1F7507D4009F8170 /* ToolBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3779B1F7507D4009F8170 /* ToolBox.swift */; };
 		CEFB02D41F73D27400C8C2DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB02D31F73D27400C8C2DE /* AppDelegate.swift */; };
 		CEFB02D61F73D27400C8C2DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB02D51F73D27400C8C2DE /* ViewController.swift */; };
 		CEFB02D91F73D27400C8C2DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFB02D71F73D27400C8C2DE /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		CEE377991F749F7F009F8170 /* UpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		CEE3779B1F7507D4009F8170 /* ToolBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolBox.swift; sourceTree = "<group>"; };
 		CEFB02D01F73D27400C8C2DE /* Trainning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trainning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFB02D31F73D27400C8C2DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEFB02D51F73D27400C8C2DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				CEFB02D31F73D27400C8C2DE /* AppDelegate.swift */,
 				CEFB02D51F73D27400C8C2DE /* ViewController.swift */,
+				CEE3779B1F7507D4009F8170 /* ToolBox.swift */,
 				CEE377991F749F7F009F8170 /* UpdateViewController.swift */,
 				CEFB02D71F73D27400C8C2DE /* Main.storyboard */,
 				CEFB02DA1F73D27400C8C2DE /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 				CEFB02D61F73D27400C8C2DE /* ViewController.swift in Sources */,
 				CEFB02D41F73D27400C8C2DE /* AppDelegate.swift in Sources */,
 				CEE3779A1F749F7F009F8170 /* UpdateViewController.swift in Sources */,
+				CEE3779C1F7507D4009F8170 /* ToolBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
