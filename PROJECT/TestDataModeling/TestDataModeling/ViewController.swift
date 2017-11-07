@@ -75,7 +75,7 @@ class ViewController: UIViewController,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        // 99퍼 있으므로.. 왜??
+      
         cell.textLabel?.text = sonList![indexPath.row].songTitle
         
         return cell

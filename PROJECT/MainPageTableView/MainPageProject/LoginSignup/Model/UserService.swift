@@ -3,7 +3,7 @@ import Foundation
 
 struct UserService
 {
-    var model: Users?  // ???'
+    var model: Users?
     
     //getter만 있음
     var documentDirectory : URL{

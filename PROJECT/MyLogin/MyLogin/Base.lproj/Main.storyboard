@@ -140,14 +140,14 @@
                                                 <rect key="frame" x="67" y="269" width="532" height="128"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="분홍체크" translatesAutoresizingMaskIntoConstraints="NO" id="zmj-gq-YvH">
-                                                        <rect key="frame" x="-68" y="-334" width="667" height="667"/>
+                                                        <rect key="frame" x="-68" y="-270" width="667" height="667"/>
                                                         <color key="backgroundColor" red="0.94740432500839233" green="0.20273542404174805" blue="0.43318259716033936" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="667" id="Uht-Ty-ygj"/>
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XL0-NW-PT8" userLabel="TF Stack View">
-                                                        <rect key="frame" x="128" y="-165" width="275" height="330"/>
+                                                        <rect key="frame" x="128" y="-101" width="275" height="330"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="휴대폰 번호 또는 이메일주소" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ske-Y4-WdA">
                                                                 <rect key="frame" x="0.0" y="0.0" width="275" height="54"/>
