@@ -1,10 +1,7 @@
 //
 //  ViewController.swift
 //  MyCalendar
-//
-//  Created by SONGYEE SHIN on 2017. 11. 8..
-//  Copyright © 2017년 SONGYEE SHIN. All rights reserved.
-//
+
 
 import UIKit
 

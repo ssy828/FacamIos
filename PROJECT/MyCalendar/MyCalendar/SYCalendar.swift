@@ -74,6 +74,7 @@ extension SYCalendar : UICollectionViewDelegate
         
         // 등록해야함!
         contentView.register(CustomCell.self, forCellWithReuseIdentifier: cellID)
+    
         // 만들어지고 난 다음에 실행
         updateLayout()
         // 이상태로는 불가능함! translatesAutoresizingMaskIntoConstraints 필요!
@@ -83,22 +84,9 @@ extension SYCalendar : UICollectionViewDelegate
     // MARK: 컬렉션뷰의 레이아웃잡기
     private func updateLayout( )
     {
-        // 이게 무조건 필요함!
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        // 오토레이아웃 적용 가능!
 
-        // Anchor : 9이상!
-        // 컨텐츠 탑 부분과 캘린더 뷰의 탑부분이 같다
-        // -> 슈퍼뷰로는 불가능! 컨텐츠뷰는 슈퍼뷰가 뭔지모르니 사용불가!
-        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        // constant: 간격
-        //     contentView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5)
-        // 멀티플라이 가능!
-        // leading : 시작 하는 부분! left: 왼쪽
-        contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-//        contentView.constraint(targetView: self, topConstant: 0, bottomConstant: 0, leftConstant: 0, rightConstant: 0 )
+        contentView.constraint(targetView: self, topConstant: 0, bottomConstant: 0, leftConstant: 0, rightConstant: 0 )
+        // self: SYCalendar
         
     }
     
@@ -144,7 +132,8 @@ class CustomCell: UICollectionViewCell
         setUpUI()
         
     }
-    
+    // MARK: addSubview먼저하고
+    // 오토레이아웃 잡기!
     private func setUpUI()
     {
         self.addSubview(titleLb) // 라벨추가
@@ -154,19 +143,12 @@ class CustomCell: UICollectionViewCell
     // MARK: 라벨 레이아웃잡기
     private func updateLBLayout( )
     {
-        titleLb.translatesAutoresizingMaskIntoConstraints = false
-        // 오토레이아웃 적용 가능!
-        
-        titleLb.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        titleLb.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-//        titleLb.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-//        titleLb.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        titleLb.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-        titleLb.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-        
+
+        titleLb.constraint(targetView: self, topConstant: 0, bottomConstant: 0, leftConstant: 0, rightConstant: 0 )
+        // self: CustomCell
     }
-    
-    
+
+    // 스토리보드용!
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -179,6 +161,8 @@ extension UIView
     func constraint(targetView: UIView, topConstant: CGFloat?, bottomConstant: CGFloat?, leftConstant: CGFloat?, rightConstant: CGFloat? )
     {
         self.translatesAutoresizingMaskIntoConstraints = false
+        // 오토레이아웃 적용
+        
         if let constant = topConstant{
             self.topAnchor.constraint(equalTo: self.topAnchor, constant: constant).isActive = true
         }
