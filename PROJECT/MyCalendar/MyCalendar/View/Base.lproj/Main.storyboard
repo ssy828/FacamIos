@@ -22,17 +22,45 @@
                                 <rect key="frame" x="10" y="170" width="355" height="347"/>
                                 <color key="backgroundColor" red="0.23171742479999999" green="0.75987412880000005" blue="0.4949186659" alpha="0.99494327910000002" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4K3-VK-6bO">
+                                <rect key="frame" x="30" y="537" width="30" height="30"/>
+                                <state key="normal" title="이전"/>
+                                <connections>
+                                    <action selector="previousBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jDf-JI-dGZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bh-eq-pVn">
+                                <rect key="frame" x="315" y="537" width="30" height="30"/>
+                                <state key="normal" title="다음"/>
+                                <connections>
+                                    <action selector="nextbtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YrW-qH-PKM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mO8-eN-RWv">
+                                <rect key="frame" x="157" y="542" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="mO8-eN-RWv" firstAttribute="top" secondItem="Yan-Oi-r0a" secondAttribute="bottom" constant="25" id="D7U-HU-Ina"/>
+                            <constraint firstItem="3bh-eq-pVn" firstAttribute="leading" secondItem="mO8-eN-RWv" secondAttribute="trailing" constant="116" id="Nvb-Fc-8Mx"/>
                             <constraint firstItem="Yan-Oi-r0a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="NwC-l1-WtF"/>
+                            <constraint firstItem="4K3-VK-6bO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Pgy-yb-NH7"/>
+                            <constraint firstItem="3bh-eq-pVn" firstAttribute="top" secondItem="Yan-Oi-r0a" secondAttribute="bottom" constant="20" id="UUI-W6-chT"/>
+                            <constraint firstItem="4K3-VK-6bO" firstAttribute="top" secondItem="Yan-Oi-r0a" secondAttribute="bottom" constant="20" id="ZWp-4w-BEo"/>
+                            <constraint firstItem="mO8-eN-RWv" firstAttribute="leading" secondItem="4K3-VK-6bO" secondAttribute="trailing" constant="97" id="bt4-WD-ZEG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yan-Oi-r0a" secondAttribute="trailing" constant="10" id="dW9-Dw-LpR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Yan-Oi-r0a" secondAttribute="bottom" constant="150" id="tTN-ON-pgN"/>
                             <constraint firstItem="Yan-Oi-r0a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="xxa-VH-ccm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3bh-eq-pVn" secondAttribute="trailing" constant="30" id="zpM-Ec-3G9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="monthLB" destination="mO8-eN-RWv" id="Xby-hA-0MW"/>
                         <outlet property="syCalendar" destination="Yan-Oi-r0a" id="IZ0-hL-k6R"/>
                     </connections>
                 </viewController>

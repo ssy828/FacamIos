@@ -9,11 +9,19 @@ import UIKit
 class SYCalendar: UIView {
 
     // MARK: 프로퍼티
+    // 라벨 년과 달
+    var year: Int?
+    var month: Int?
+    
     // 외부에서 받을 데이터
     var date: Date?{
         // 데이터 값이 들어가면 willSet이 호출됨
         willSet{
             calendarData = SYCalendarDatamodel(date: newValue!)
+            year = calendarData?.year
+            month = calendarData?.month
+            contentView.reloadData()
+            // date 변수만 바끼면 가능!
         }
     }
     
@@ -64,27 +72,25 @@ class SYCalendar: UIView {
     }
 
 }
-
-// MARK: CollectionViewDelegateFlowLayout
-extension SYCalendar: UICollectionViewDelegateFlowLayout
+// MARK: 메소드
+extension SYCalendar
 {
-    // MARK: 셀 사이즈
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width / 7 , height: 60)
-    }
-    
-    // MARK: 아이템끼리의 간격
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func nextMonth()
+    {
         
-        // 기본적으로 10, 10이 주어지므로 -> 스토리보드상에서 보면 확인 가능!
-        // 0으로 할당하면 셀 개수대로 나눠도 문제없음
-        return 0
+        // 데이트에 다음달 값을 할당: 데이터 모델을 이용해
+//        date = SYCalendarManager.nextMonth(with: calendarData!)
+        date = SYCalendarManager.nextMonth(with: date!)
     }
-
+    func previousMonth()
+    {
+        date = SYCalendarManager.previousMonth(with: date!)
+    }
 }
 
-// MARK: Delegate
-extension SYCalendar : UICollectionViewDelegate
+
+// MARK: UICollectionViewDelegateFlowLayout : UICollectionViewDelegate 상속받음
+extension SYCalendar : UICollectionViewDelegateFlowLayout
 {
   
     // MARK: UI관련 준비하는 곳
@@ -109,16 +115,48 @@ extension SYCalendar : UICollectionViewDelegate
         contentView.constraint(targetView: self, topConstant: 0, bottomConstant: 0, leftConstant: 0, rightConstant: 0 )
         // self: SYCalendar
     }
+    // MARK: 셀 사이즈
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+//        let width = collectionView.frame.size.width / 7
+        // insect,LineSpacing, InteritemSpacing 값을 빼주면 됨
+        //  (collectionView.frame.size.width - (6*1)
+        // 1이 insect,LineSpacing, InteritemSpacing 값
+        return CGSize(width: collectionView.frame.size.width / 7, height: collectionView.frame.size.height / 6)
+    }
     
+    // MARK: 아이템끼리의 사이 간격: vertical로 설정해줬으므로
+    // 기본적으로 10, 10이 주어지므로 -> 스토리보드상에서 보면 확인 가능!
+    // 0으로 할당하면 셀 개수대로 나눠도 문제없음
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 0
+    }
+    // MARK: 아이템끼리 위아래 간격
+    // 기본적으로 10, 10이 주어지므로 -> 스토리보드상에서 보면 확인 가능!
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 0
+    }
+    
+    // MARK: 셀을 선택했을 때 표시!
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        
+    }
+
 }
 
 // MARK: DataSource
 extension SYCalendar : UICollectionViewDataSource{
     
+    // 섹션 개수
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
     
+    // 섹션안에서 셀의 개수 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if section == 0 {
@@ -138,9 +176,14 @@ extension SYCalendar : UICollectionViewDataSource{
         
     }
     
-    
+    // 셀 재사용
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CustomCell
+        
+        // 계속 셀을 더해서 날짜를 꺼내므로 한번 초기화해주고
+        // 모든 셀이 클리어가 된 다음에 나와야 하므로 메소드를 아예 만들어주는게 좋다
+//        cell.titleLb.text = ""
+        cell.resetInit()
         
         if indexPath.section == 0
         {
@@ -157,7 +200,6 @@ extension SYCalendar : UICollectionViewDataSource{
         }
         
 //        cell.titleLb.text = "\(indexPath.row)" // 이부분이 있으면 0 1 2로 나옴
-        
         return cell
     }
     
@@ -178,6 +220,12 @@ class CustomCell: UICollectionViewCell
         lb.layer.cornerRadius = 10
         return lb
     }()
+    
+    func resetInit()
+    {
+        titleLb.text = ""
+        
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

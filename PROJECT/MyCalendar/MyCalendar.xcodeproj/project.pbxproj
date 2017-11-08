@@ -58,16 +58,48 @@
 		CEE160931FB29668005EBA8F /* MyCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				CEE160941FB29668005EBA8F /* AppDelegate.swift */,
-				CEE160961FB29668005EBA8F /* ViewController.swift */,
-				CEE160981FB29668005EBA8F /* Main.storyboard */,
-				CEE1609B1FB29668005EBA8F /* Assets.xcassets */,
-				CEE1609D1FB29668005EBA8F /* LaunchScreen.storyboard */,
 				CEE160A01FB29668005EBA8F /* Info.plist */,
-				CEE160A61FB296B5005EBA8F /* SYCalendar.swift */,
-				CEE160A81FB2AB40005EBA8F /* SYCalendarDataModel.swift */,
+				CEE160AD1FB2C891005EBA8F /* Source */,
+				CEE160AC1FB2C872005EBA8F /* VC */,
+				CEE160AB1FB2C865005EBA8F /* View */,
+				CEE160AA1FB2C84F005EBA8F /* Model */,
 			);
 			path = MyCalendar;
+			sourceTree = "<group>";
+		};
+		CEE160AA1FB2C84F005EBA8F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEE160A81FB2AB40005EBA8F /* SYCalendarDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEE160AB1FB2C865005EBA8F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEE160981FB29668005EBA8F /* Main.storyboard */,
+				CEE160A61FB296B5005EBA8F /* SYCalendar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEE160AC1FB2C872005EBA8F /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				CEE160961FB29668005EBA8F /* ViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		CEE160AD1FB2C891005EBA8F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				CEE160941FB29668005EBA8F /* AppDelegate.swift */,
+				CEE1609B1FB29668005EBA8F /* Assets.xcassets */,
+				CEE1609D1FB29668005EBA8F /* LaunchScreen.storyboard */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
