@@ -9,9 +9,15 @@ import UIKit
 class SYCalendar: UIView {
 
     // MARK: 프로퍼티
-    
     // 외부에서 받을 데이터
-    var data: Data?
+    var date: Date?{
+        // 데이터 값이 들어가면 willSet이 호출됨
+        willSet{
+            calendarData = SYCalendarDatamodel(date: newValue!)
+        }
+    }
+    
+    private var calendarData: SYCalendarDatamodel?
     
     // 컬렉션 뷰: 외부에서 건들 수 없음 -> 클로저 형태
     // 컬렉션 뷰 인스턴스만 생성
@@ -56,9 +62,25 @@ class SYCalendar: UIView {
         super.init(coder: aDecoder)
         setUpUI() // 둘의 용도가 그때 그때 다르므로
     }
+
+}
+
+// MARK: CollectionViewDelegateFlowLayout
+extension SYCalendar: UICollectionViewDelegateFlowLayout
+{
+    // MARK: 셀 사이즈
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width / 7 , height: 60)
+    }
     
-    
-  
+    // MARK: 아이템끼리의 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        // 기본적으로 10, 10이 주어지므로 -> 스토리보드상에서 보면 확인 가능!
+        // 0으로 할당하면 셀 개수대로 나눠도 문제없음
+        return 0
+    }
+
 }
 
 // MARK: Delegate
@@ -72,7 +94,7 @@ extension SYCalendar : UICollectionViewDelegate
         contentView.delegate = self
         contentView.dataSource = self
         
-        // 등록해야함!
+        // 셀을 보일 클래스 등록해야함!
         contentView.register(CustomCell.self, forCellWithReuseIdentifier: cellID)
     
         // 만들어지고 난 다음에 실행
@@ -84,36 +106,64 @@ extension SYCalendar : UICollectionViewDelegate
     // MARK: 컬렉션뷰의 레이아웃잡기
     private func updateLayout( )
     {
-
         contentView.constraint(targetView: self, topConstant: 0, bottomConstant: 0, leftConstant: 0, rightConstant: 0 )
         // self: SYCalendar
-        
     }
     
 }
 
 // MARK: DataSource
-
 extension SYCalendar : UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        
+        if section == 0 {
+            return 7
+        }else
+        {
+            
+            if let calendarData = calendarData
+            {
+                 // 캘린더 빈칸을 채워야하므로
+                return calendarData.lastDayOFMonth + calendarData.startWeekOfMonth.rawValue
+            }else{
+                return 0
+            }
+            
+        }
+        
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CustomCell
-        cell.titleLb.text = "\(indexPath.row)"
+        
+        if indexPath.section == 0
+        {
+            // 일 월 화 수 ...이렇게 시작하므로
+           cell.titleLb.text = WeekDay(rawValue: indexPath.item)?.name
+        }else{
+           let changedIndex = indexPath.item - calendarData!.startWeekOfMonth.rawValue
+            // ???
+            if changedIndex >= 0
+            {
+                let day = changedIndex + 1
+                cell.titleLb.text = "\(day)"
+            }
+        }
+        
+//        cell.titleLb.text = "\(indexPath.row)" // 이부분이 있으면 0 1 2로 나옴
         
         return cell
     }
     
 }
 
-// MARK: 컬렉션 뷰에 올릴 라벨?
+// MARK: CustomCell
 class CustomCell: UICollectionViewCell
 {
     // awakeFromNib이 일어날 필요 없음. 자동적으로 만들어지므로
@@ -123,7 +173,9 @@ class CustomCell: UICollectionViewCell
     var titleLb: UILabel = {
         let lb = UILabel()
         lb.textAlignment = .center
-        
+        lb.layer.borderColor = #colorLiteral(red: 1, green: 0.9967653155, blue: 0.9591305852, alpha: 1)
+        lb.layer.borderWidth = 3
+        lb.layer.cornerRadius = 10
         return lb
     }()
     
@@ -143,7 +195,6 @@ class CustomCell: UICollectionViewCell
     // MARK: 라벨 레이아웃잡기
     private func updateLBLayout( )
     {
-
         titleLb.constraint(targetView: self, topConstant: 0, bottomConstant: 0, leftConstant: 0, rightConstant: 0 )
         // self: CustomCell
     }
@@ -164,16 +215,16 @@ extension UIView
         // 오토레이아웃 적용
         
         if let constant = topConstant{
-            self.topAnchor.constraint(equalTo: self.topAnchor, constant: constant).isActive = true
+            self.topAnchor.constraint(equalTo: targetView.topAnchor, constant: constant).isActive = true
         }
         if let constant = rightConstant{
-            self.rightAnchor.constraint(equalTo: self.rightAnchor, constant: constant).isActive = true
+            self.rightAnchor.constraint(equalTo: targetView.rightAnchor, constant: constant).isActive = true
         }
         if let constant = bottomConstant{
-            self.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: constant).isActive = true
+            self.bottomAnchor.constraint(equalTo: targetView.bottomAnchor, constant: constant).isActive = true
         }
         if let constant = leftConstant{
-            self.leftAnchor.constraint(equalTo: self.leftAnchor, constant: constant).isActive = true
+            self.leftAnchor.constraint(equalTo: targetView.leftAnchor, constant: constant).isActive = true
         }
     }
 }

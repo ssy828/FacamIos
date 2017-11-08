@@ -13,6 +13,7 @@
 		CEE1609C1FB29668005EBA8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE1609B1FB29668005EBA8F /* Assets.xcassets */; };
 		CEE1609F1FB29668005EBA8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE1609D1FB29668005EBA8F /* LaunchScreen.storyboard */; };
 		CEE160A71FB296B5005EBA8F /* SYCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE160A61FB296B5005EBA8F /* SYCalendar.swift */; };
+		CEE160A91FB2AB40005EBA8F /* SYCalendarDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE160A81FB2AB40005EBA8F /* SYCalendarDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CEE1609E1FB29668005EBA8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE160A01FB29668005EBA8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE160A61FB296B5005EBA8F /* SYCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SYCalendar.swift; sourceTree = "<group>"; };
+		CEE160A81FB2AB40005EBA8F /* SYCalendarDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SYCalendarDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				CEE1609D1FB29668005EBA8F /* LaunchScreen.storyboard */,
 				CEE160A01FB29668005EBA8F /* Info.plist */,
 				CEE160A61FB296B5005EBA8F /* SYCalendar.swift */,
+				CEE160A81FB2AB40005EBA8F /* SYCalendarDataModel.swift */,
 			);
 			path = MyCalendar;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE160971FB29668005EBA8F /* ViewController.swift in Sources */,
+				CEE160A91FB2AB40005EBA8F /* SYCalendarDataModel.swift in Sources */,
 				CEE160951FB29668005EBA8F /* AppDelegate.swift in Sources */,
 				CEE160A71FB296B5005EBA8F /* SYCalendar.swift in Sources */,
 			);
