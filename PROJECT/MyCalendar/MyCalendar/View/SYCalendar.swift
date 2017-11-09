@@ -6,9 +6,19 @@ import UIKit
 // 외부에서 보여지게 할 것이므로
 // 스토리보드, 코드 가능!
 // 내부적으로 코드로 만들 것
+
+// MARK: 프로토콜 생성
+@objc protocol SYCalendarDelegate
+{
+    @objc optional func calendar(_ caalendar: SYCalendar, didSelectedDate: Date)
+}
+
 class SYCalendar: UIView {
 
     // MARK: 프로퍼티
+    // 델리게이트 받을 것
+    var delegate: SYCalendarDelegate?
+    
     // 라벨 년과 달
     var year: Int?
     var month: Int?
@@ -141,9 +151,10 @@ extension SYCalendar : UICollectionViewDelegateFlowLayout
     
     // MARK: 셀을 선택했을 때 표시!
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+//        delegate?.calendar(self, didSelectedDate: cell.data)
         
-        
-        
+         
     }
 
 }
@@ -220,6 +231,9 @@ class CustomCell: UICollectionViewCell
         lb.layer.cornerRadius = 10
         return lb
     }()
+    
+    // 데이트?
+    var date: Date?
     
     func resetInit()
     {

@@ -39,6 +39,7 @@ struct SYCalendarDatamodel {
     var startWeekOfMonth: WeekDay
     var lastDayOFMonth: Int
     
+    
     init?(date: Date) // date에 현재 년월일,시간,분,초 다있음
     {
         let calendarIns = Calendar(identifier: .gregorian)
@@ -119,6 +120,11 @@ class SYCalendarManager
         guard let newDate = calendarIns.date(byAdding: addCompo, to: nowDate) else { return nil }
         
         return newDate
+    }
+    
+    func newDate(of day: Int )
+    {
+        
     }
 }
 
