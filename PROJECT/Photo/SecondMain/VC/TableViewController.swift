@@ -21,12 +21,7 @@ class TableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        data = [
-            PhotoModel(name: "logo", imageName: "logo"),
-            PhotoModel(name: "logo", imageName: "logo"),
-            PhotoModel(name: "logo", imageName: "logo"),
-            PhotoModel(name: "logo", imageName: "logo"),
-        ]
+        
     }
 
 }
@@ -48,8 +43,8 @@ extension TableViewController: UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! CustomCell
         // 셀을 받아와 그걸 이용
         let cellData = data[indexPath.row]
-        cell.titleLb.text = cellData.name
-        cell.imgView.image = UIImage(named: cellData.imageName)
+        cell.titleLb.text = cellData.title
+//        cell.imgView.image = UIImage(named: cellData.image)
 //        cell.itembtn.backgroundImage(for: .normal)
         
         return cell
