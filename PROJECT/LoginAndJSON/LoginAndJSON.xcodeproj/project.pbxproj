@@ -7,29 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE1FF2781FBBEA0000F665BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF2771FBBEA0000F665BD /* AppDelegate.swift */; };
-		CE1FF27A1FBBEA0000F665BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF2791FBBEA0000F665BD /* ViewController.swift */; };
-		CE1FF27D1FBBEA0000F665BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1FF27B1FBBEA0000F665BD /* Main.storyboard */; };
-		CE1FF27F1FBBEA0000F665BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1FF27E1FBBEA0000F665BD /* Assets.xcassets */; };
-		CE1FF2821FBBEA0000F665BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1FF2801FBBEA0000F665BD /* LaunchScreen.storyboard */; };
-		CE1FF2A91FBC0C0A00F665BD /* newVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF2A81FBC0C0A00F665BD /* newVC.swift */; };
-		CE1FF2AB1FBC139B00F665BD /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF2AA1FBC139B00F665BD /* DataModel.swift */; };
+		CE91205E1FBD5B4A008572CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91205D1FBD5B4A008572CA /* AppDelegate.swift */; };
+		CE9120601FBD5B4A008572CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91205F1FBD5B4A008572CA /* ViewController.swift */; };
+		CE9120631FBD5B4A008572CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9120611FBD5B4A008572CA /* Main.storyboard */; };
+		CE9120651FBD5B4A008572CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9120641FBD5B4A008572CA /* Assets.xcassets */; };
+		CE9120681FBD5B4A008572CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9120661FBD5B4A008572CA /* LaunchScreen.storyboard */; };
+		CE9120701FBD5D0E008572CA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91206F1FBD5D0E008572CA /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE1FF2741FBBEA0000F665BD /* TestJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE1FF2771FBBEA0000F665BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE1FF2791FBBEA0000F665BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE1FF27C1FBBEA0000F665BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CE1FF27E1FBBEA0000F665BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE1FF2811FBBEA0000F665BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CE1FF2831FBBEA0000F665BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE1FF2A81FBC0C0A00F665BD /* newVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newVC.swift; sourceTree = "<group>"; };
-		CE1FF2AA1FBC139B00F665BD /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		CE91205A1FBD5B4A008572CA /* LoginAndJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginAndJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE91205D1FBD5B4A008572CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE91205F1FBD5B4A008572CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE9120621FBD5B4A008572CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE9120641FBD5B4A008572CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE9120671FBD5B4A008572CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE9120691FBD5B4A008572CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE91206F1FBD5D0E008572CA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CE1FF2711FBBEA0000F665BD /* Frameworks */ = {
+		CE9120571FBD5B4A008572CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,82 +37,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE1FF26B1FBBEA0000F665BD = {
+		CE9120511FBD5B4A008572CA = {
 			isa = PBXGroup;
 			children = (
-				CE1FF2761FBBEA0000F665BD /* TestJSON */,
-				CE1FF2751FBBEA0000F665BD /* Products */,
+				CE91205C1FBD5B4A008572CA /* LoginAndJSON */,
+				CE91205B1FBD5B4A008572CA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		CE1FF2751FBBEA0000F665BD /* Products */ = {
+		CE91205B1FBD5B4A008572CA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE1FF2741FBBEA0000F665BD /* TestJSON.app */,
+				CE91205A1FBD5B4A008572CA /* LoginAndJSON.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CE1FF2761FBBEA0000F665BD /* TestJSON */ = {
+		CE91205C1FBD5B4A008572CA /* LoginAndJSON */ = {
 			isa = PBXGroup;
 			children = (
-				CE1FF2A71FBC0BB100F665BD /* TestWeather */,
-				CE1FF2771FBBEA0000F665BD /* AppDelegate.swift */,
-				CE1FF2791FBBEA0000F665BD /* ViewController.swift */,
-				CE1FF27E1FBBEA0000F665BD /* Assets.xcassets */,
-				CE1FF2801FBBEA0000F665BD /* LaunchScreen.storyboard */,
-				CE1FF2831FBBEA0000F665BD /* Info.plist */,
+				CE91205D1FBD5B4A008572CA /* AppDelegate.swift */,
+				CE91206F1FBD5D0E008572CA /* NetworkManager.swift */,
+				CE91205F1FBD5B4A008572CA /* ViewController.swift */,
+				CE9120611FBD5B4A008572CA /* Main.storyboard */,
+				CE9120641FBD5B4A008572CA /* Assets.xcassets */,
+				CE9120661FBD5B4A008572CA /* LaunchScreen.storyboard */,
+				CE9120691FBD5B4A008572CA /* Info.plist */,
 			);
-			path = TestJSON;
-			sourceTree = "<group>";
-		};
-		CE1FF2A71FBC0BB100F665BD /* TestWeather */ = {
-			isa = PBXGroup;
-			children = (
-				CE1FF2A81FBC0C0A00F665BD /* newVC.swift */,
-				CE1FF2AA1FBC139B00F665BD /* DataModel.swift */,
-				CE1FF27B1FBBEA0000F665BD /* Main.storyboard */,
-			);
-			path = TestWeather;
+			path = LoginAndJSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE1FF2731FBBEA0000F665BD /* TestJSON */ = {
+		CE9120591FBD5B4A008572CA /* LoginAndJSON */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE1FF2861FBBEA0000F665BD /* Build configuration list for PBXNativeTarget "TestJSON" */;
+			buildConfigurationList = CE91206C1FBD5B4A008572CA /* Build configuration list for PBXNativeTarget "LoginAndJSON" */;
 			buildPhases = (
-				CE1FF2701FBBEA0000F665BD /* Sources */,
-				CE1FF2711FBBEA0000F665BD /* Frameworks */,
-				CE1FF2721FBBEA0000F665BD /* Resources */,
+				CE9120561FBD5B4A008572CA /* Sources */,
+				CE9120571FBD5B4A008572CA /* Frameworks */,
+				CE9120581FBD5B4A008572CA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = TestJSON;
-			productName = TestJSON;
-			productReference = CE1FF2741FBBEA0000F665BD /* TestJSON.app */;
+			name = LoginAndJSON;
+			productName = LoginAndJSON;
+			productReference = CE91205A1FBD5B4A008572CA /* LoginAndJSON.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CE1FF26C1FBBEA0000F665BD /* Project object */ = {
+		CE9120521FBD5B4A008572CA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "SONGYEE SHIN";
 				TargetAttributes = {
-					CE1FF2731FBBEA0000F665BD = {
+					CE9120591FBD5B4A008572CA = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = CE1FF26F1FBBEA0000F665BD /* Build configuration list for PBXProject "TestJSON" */;
+			buildConfigurationList = CE9120551FBD5B4A008572CA /* Build configuration list for PBXProject "LoginAndJSON" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -122,56 +111,55 @@
 				en,
 				Base,
 			);
-			mainGroup = CE1FF26B1FBBEA0000F665BD;
-			productRefGroup = CE1FF2751FBBEA0000F665BD /* Products */;
+			mainGroup = CE9120511FBD5B4A008572CA;
+			productRefGroup = CE91205B1FBD5B4A008572CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE1FF2731FBBEA0000F665BD /* TestJSON */,
+				CE9120591FBD5B4A008572CA /* LoginAndJSON */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CE1FF2721FBBEA0000F665BD /* Resources */ = {
+		CE9120581FBD5B4A008572CA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE1FF2821FBBEA0000F665BD /* LaunchScreen.storyboard in Resources */,
-				CE1FF27F1FBBEA0000F665BD /* Assets.xcassets in Resources */,
-				CE1FF27D1FBBEA0000F665BD /* Main.storyboard in Resources */,
+				CE9120681FBD5B4A008572CA /* LaunchScreen.storyboard in Resources */,
+				CE9120651FBD5B4A008572CA /* Assets.xcassets in Resources */,
+				CE9120631FBD5B4A008572CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CE1FF2701FBBEA0000F665BD /* Sources */ = {
+		CE9120561FBD5B4A008572CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE1FF27A1FBBEA0000F665BD /* ViewController.swift in Sources */,
-				CE1FF2AB1FBC139B00F665BD /* DataModel.swift in Sources */,
-				CE1FF2781FBBEA0000F665BD /* AppDelegate.swift in Sources */,
-				CE1FF2A91FBC0C0A00F665BD /* newVC.swift in Sources */,
+				CE9120701FBD5D0E008572CA /* NetworkManager.swift in Sources */,
+				CE9120601FBD5B4A008572CA /* ViewController.swift in Sources */,
+				CE91205E1FBD5B4A008572CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE1FF27B1FBBEA0000F665BD /* Main.storyboard */ = {
+		CE9120611FBD5B4A008572CA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CE1FF27C1FBBEA0000F665BD /* Base */,
+				CE9120621FBD5B4A008572CA /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		CE1FF2801FBBEA0000F665BD /* LaunchScreen.storyboard */ = {
+		CE9120661FBD5B4A008572CA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CE1FF2811FBBEA0000F665BD /* Base */,
+				CE9120671FBD5B4A008572CA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -179,7 +167,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		CE1FF2841FBBEA0000F665BD /* Debug */ = {
+		CE91206A1FBD5B4A008572CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -236,7 +224,7 @@
 			};
 			name = Debug;
 		};
-		CE1FF2851FBBEA0000F665BD /* Release */ = {
+		CE91206B1FBD5B4A008572CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -286,28 +274,28 @@
 			};
 			name = Release;
 		};
-		CE1FF2871FBBEA0000F665BD /* Debug */ = {
+		CE91206D1FBD5B4A008572CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TestJSON/Info.plist;
+				INFOPLIST_FILE = LoginAndJSON/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Hello.TestJSON;
+				PRODUCT_BUNDLE_IDENTIFIER = Hello.LoginAndJSON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		CE1FF2881FBBEA0000F665BD /* Release */ = {
+		CE91206E1FBD5B4A008572CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TestJSON/Info.plist;
+				INFOPLIST_FILE = LoginAndJSON/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Hello.TestJSON;
+				PRODUCT_BUNDLE_IDENTIFIER = Hello.LoginAndJSON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,25 +305,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE1FF26F1FBBEA0000F665BD /* Build configuration list for PBXProject "TestJSON" */ = {
+		CE9120551FBD5B4A008572CA /* Build configuration list for PBXProject "LoginAndJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CE1FF2841FBBEA0000F665BD /* Debug */,
-				CE1FF2851FBBEA0000F665BD /* Release */,
+				CE91206A1FBD5B4A008572CA /* Debug */,
+				CE91206B1FBD5B4A008572CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE1FF2861FBBEA0000F665BD /* Build configuration list for PBXNativeTarget "TestJSON" */ = {
+		CE91206C1FBD5B4A008572CA /* Build configuration list for PBXNativeTarget "LoginAndJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CE1FF2871FBBEA0000F665BD /* Debug */,
-				CE1FF2881FBBEA0000F665BD /* Release */,
+				CE91206D1FBD5B4A008572CA /* Debug */,
+				CE91206E1FBD5B4A008572CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CE1FF26C1FBBEA0000F665BD /* Project object */;
+	rootObject = CE9120521FBD5B4A008572CA /* Project object */;
 }

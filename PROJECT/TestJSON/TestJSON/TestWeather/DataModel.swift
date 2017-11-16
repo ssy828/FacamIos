@@ -6,6 +6,7 @@
 
 import Foundation
 
+// 서버에서 받아온 정보에 맞게 만든는 것
 struct DataModel
 {
     let tempMax: Double

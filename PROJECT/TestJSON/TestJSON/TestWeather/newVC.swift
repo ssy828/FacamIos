@@ -11,7 +11,7 @@ import CoreLocation
 
 // 37.516303, 127.020013
 
-class newVCViewController: UIViewController {
+class newVC: UIViewController {
     
     @IBOutlet weak var tempMinLB: UILabel!
     @IBOutlet weak var tempMaxLB: UILabel!
@@ -35,6 +35,7 @@ class newVCViewController: UIViewController {
         session.dataTask(with: request) { [weak self] (data, response, error) in
             //            print(response)
             guard let `self` = self else { return }
+            
             // 데이터를 꺼내오기!
             if let data = data
             {
@@ -49,8 +50,8 @@ class newVCViewController: UIViewController {
                         DispatchQueue.main.async {
                             let tempMAX = weather.tempMax - 273.15
                             let tempMIN = weather.tempMin - 273.15
-                            `self`.tempMaxLB.text = "\(tempMAX)"
-                            `self`.tempMinLB.text = "\(tempMIN)"
+                            self.tempMaxLB.text = "\(tempMAX)"
+                            self.tempMinLB.text = "\(tempMIN)"
                         }
                         
                     }
