@@ -37,12 +37,10 @@ class NetworkManager
     static let one: NetworkManager = NetworkManager()
     
     // 토큰값
-    let tokenKey = "key"
-    
-    
+    private let tokenKey = "key"
     
     // 토큰을 연산 프로퍼티 사용해 바로 값을 가져오고 넣어줄 것임
-    var token: String? {
+    private var token: String? {
         get {
             return UserDefaults.standard.string(forKey: tokenKey)
         }
@@ -59,47 +57,64 @@ class NetworkManager
         let param = "username=\(userId)&password=\(userPwd)"
         guard let dataParams = param.data(using: .utf8) else { return }
         
-//         URL 객체 정의
-        guard let url = URL(string: base + logInURL) else { return }
-
+        fetch(page: logInURL,
+              statusCode: 200,
+              httpsMethod: "POST",
+              httpbody: dataParams,
+              completion: completion)
+        
+    }
+    
+    // MARK: 회원가입
+    func fetchSignup(userId: String, userPwd: String, completion: @escaping (Bool) -> Void)
+    {
+        // 전송할 값 준비
+        let param = "username=\(userId)&password1=\(userPwd)&password2=\(userPwd)"
+        guard let paramData = param.data(using: .utf8) else { return }
+        
+        fetch(page: signUpURL,
+              statusCode: 201,
+              httpsMethod: "POST",
+              httpbody: paramData,
+              completion: completion)
+    }
+    
+    // MARK: 반복적인 기능
+    private func fetch(page: String, statusCode: Int, httpsMethod: String, httpbody: Data, completion:  @escaping (Bool)-> Void)
+    {
+        
+        // url 객체 정의
+        guard let url = URL(string: base + page) else { return }
+        
+        // 요청
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.httpBody = dataParams  // 이곳에  데이터를 넣어서 보내줘야한다!
-
+        request.httpMethod = httpsMethod
+        request.httpBody = httpbody
+        
+        // 관련된 네트워크 데이터 전송 태스크 그룹을 조정하는 개체
         let task = URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
-            // self가 옵셔널을 받으므로!
-            guard let `self` = self else{ return }
+            guard let `self` = self else {return}
+            // 데이터를 옵셔널바인딩
             if let data = data {
-
-                // 이곳은 데이터가 맞는지 확인
-                if (response as! HTTPURLResponse).statusCode == 200 {
-
-                    // 데이터에서 토큰을 가져와야하므로 -> 어떤 곳에 저장해야함
-                    // 데이터는 보통 문자열로 받음
-                    //                        String.init(data: data, encoding: .utf8)
-
-                    do {
-
-                        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String],
-                            let token = json["key"] else { return }
-
-                        self.token  = token
-                        completion(true) // 어떤 클로저 실행
-
+                
+                // statusCode 확인 부분
+                if (response as! HTTPURLResponse).statusCode == statusCode
+                {
+                    do{
+                        // json형태로 데이터 값을 읽어옴
+                        guard let json = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: String] , let token = json["key"] else { return }
+                        self.token = token
+                        completion(true)
                     } catch (let error) {
                         print("\(error.localizedDescription)")
-                        completion(false) // 클로저 실행안함
-                        return
+                        completion(false)
                     }
+                    
                 }
             }
         }
-        task.resume() // 대기 상태
+        task.resume()// 대기 상태
     }
-    
-
-    
-    
 }
 
 
