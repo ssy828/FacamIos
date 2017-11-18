@@ -3,7 +3,6 @@
 //  LoginAndJSON
 
 import  UIKit
-
 // 알람
 struct Alert
 {
@@ -23,7 +22,9 @@ struct Alert
         alert.addAction(okAction)
         if cancelAction
         {
-            let cancelAction = UIAlertAction(title: "취소", style: UIAlertActionStyle.destructive, handler: completion)
+            let cancelAction = UIAlertAction(title: "취소",
+                                             style: UIAlertActionStyle.destructive,
+                                             handler: completion)
             alert.addAction(cancelAction)
         }
     

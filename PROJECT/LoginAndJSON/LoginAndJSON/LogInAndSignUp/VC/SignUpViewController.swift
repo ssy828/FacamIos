@@ -1,13 +1,8 @@
 //
 //  SignUpViewController.swift
 //  LoginAndJSON
-//
-
-
 import UIKit
-
 //  회원 가입창실행
-
 class SignUpViewController: UIViewController {
 
     var network = NetworkManager.one
@@ -29,19 +24,14 @@ class SignUpViewController: UIViewController {
         guard let userPwd = pwdTF.text, !userPwd.isEmpty else { return }
         guard let userRePwd = rePwdTF.text, !userRePwd.isEmpty else { return }
         
-        
-        // if문을 사용해 isEmpty를 쓰는게 나은 건지
-//        if userId.isEmpty || userPwd.isEmpty || userRePwd.isEmpty
-//        {
-//            //
-//        }
         network.fetchSignup(userId: userId, userPwd: userPwd) { [weak self] isSuccess in
              // 클로저를 통해서 성공했을 경우
             guard let `self` = self else { return }
             if isSuccess
             {
                 let alertController = Alert.showAlert(title: "회원가입 성공!", msg: "회원가입을 축하합니다!", cancelAction: true, completion: { _ in
-                  
+    
+                    // 네비게이션 컨트롤러일 경우
 //                    if let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "Login") { self.navigationController?.pushViewController(nextVC, animated: true)}
                 self.dismiss(animated: true, completion: nil)
                 })
@@ -59,12 +49,7 @@ class SignUpViewController: UIViewController {
                 }
             }
         }
-        
-        
-        
-        
+  
     }
-    
-    
 
 }

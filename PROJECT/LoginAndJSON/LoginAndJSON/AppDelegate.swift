@@ -1,21 +1,24 @@
 //
 //  AppDelegate.swift
 //  LoginAndJSON
-//
-//  Created by SONGYEE SHIN on 2017. 11. 16..
-//  Copyright © 2017년 SONGYEE SHIN. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+//    var network = NetworkManager.one
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // 이곳에 저장해 두기 자동으로 로그인 가능하게 만들기
+        // 토큰을 넣었을때 그 값을 가져오고 사용자 인증
+        // 회원가입메인페이지로 나오고!
+      
+        if NetworkManager.one.isLogin {
+            
+        } else {
+            
+        }
         
         
         return true

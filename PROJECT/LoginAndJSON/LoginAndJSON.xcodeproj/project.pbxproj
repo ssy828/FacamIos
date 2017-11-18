@@ -15,6 +15,9 @@
 		CE9120701FBD5D0E008572CA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91206F1FBD5D0E008572CA /* NetworkManager.swift */; };
 		CE9120731FBDB6CA008572CA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9120721FBDB6CA008572CA /* Alert.swift */; };
 		CE9120751FBDBAC4008572CA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9120741FBDBAC4008572CA /* SignUpViewController.swift */; };
+		CEC9F7941FBE7860002D32C8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC9F7931FBE7860002D32C8 /* DetailViewController.swift */; };
+		CECFE4FB1FBE870C005CFF7F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFE4FA1FBE870C005CFF7F /* DataModel.swift */; };
+		CEDF07791FBDED5700E53783 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF07781FBDED5700E53783 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		CE91206F1FBD5D0E008572CA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CE9120721FBDB6CA008572CA /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CE9120741FBDBAC4008572CA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CEC9F7931FBE7860002D32C8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CECFE4FA1FBE870C005CFF7F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		CEDF07781FBDED5700E53783 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,25 +66,84 @@
 		CE91205C1FBD5B4A008572CA /* LoginAndJSON */ = {
 			isa = PBXGroup;
 			children = (
-				CE9120711FBDB6BA008572CA /* New Group */,
+				CEDF07741FBDEC5200E53783 /* New Group */,
+				CE9120721FBDB6CA008572CA /* Alert.swift */,
+				CE9120711FBDB6BA008572CA /* LogInAndSignUp */,
+				CEC9F7931FBE7860002D32C8 /* DetailViewController.swift */,
 				CE91205D1FBD5B4A008572CA /* AppDelegate.swift */,
-				CE91206F1FBD5D0E008572CA /* NetworkManager.swift */,
-				CE91205F1FBD5B4A008572CA /* LoginViewController.swift */,
-				CE9120611FBD5B4A008572CA /* Main.storyboard */,
 				CE9120641FBD5B4A008572CA /* Assets.xcassets */,
 				CE9120661FBD5B4A008572CA /* LaunchScreen.storyboard */,
 				CE9120691FBD5B4A008572CA /* Info.plist */,
-				CE9120721FBDB6CA008572CA /* Alert.swift */,
+				CECFE4FA1FBE870C005CFF7F /* DataModel.swift */,
 			);
 			path = LoginAndJSON;
 			sourceTree = "<group>";
 		};
-		CE9120711FBDB6BA008572CA /* New Group */ = {
+		CE9120711FBDB6BA008572CA /* LogInAndSignUp */ = {
 			isa = PBXGroup;
 			children = (
+				CEDF07731FBDEBDC00E53783 /* Model */,
+				CEDF07721FBDEBD100E53783 /* VC */,
+				CEDF07711FBDEBCC00E53783 /* View */,
+			);
+			path = LogInAndSignUp;
+			sourceTree = "<group>";
+		};
+		CEDF07711FBDEBCC00E53783 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE9120611FBD5B4A008572CA /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEDF07721FBDEBD100E53783 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				CE91205F1FBD5B4A008572CA /* LoginViewController.swift */,
 				CE9120741FBDBAC4008572CA /* SignUpViewController.swift */,
 			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		CEDF07731FBDEBDC00E53783 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE91206F1FBD5D0E008572CA /* NetworkManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEDF07741FBDEC5200E53783 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				CEDF07771FBDEC6700E53783 /* Model */,
+				CEDF07761FBDEC6100E53783 /* VC */,
+				CEDF07751FBDEC5B00E53783 /* View */,
+			);
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		CEDF07751FBDEC5B00E53783 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEDF07761FBDEC6100E53783 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				CEDF07781FBDED5700E53783 /* TableViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		CEDF07771FBDEC6700E53783 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,10 +219,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9120701FBD5D0E008572CA /* NetworkManager.swift in Sources */,
+				CEDF07791FBDED5700E53783 /* TableViewController.swift in Sources */,
 				CE9120601FBD5B4A008572CA /* LoginViewController.swift in Sources */,
 				CE9120731FBDB6CA008572CA /* Alert.swift in Sources */,
 				CE91205E1FBD5B4A008572CA /* AppDelegate.swift in Sources */,
+				CECFE4FB1FBE870C005CFF7F /* DataModel.swift in Sources */,
 				CE9120751FBDBAC4008572CA /* SignUpViewController.swift in Sources */,
+				CEC9F7941FBE7860002D32C8 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
