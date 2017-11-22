@@ -2,10 +2,9 @@
 //  NetworkManager.swift
 //  LoginAndJSON
 //
-
-
 import Foundation
 import UIKit
+import Alamofire
 
 // enum -> url 정리 : 로그인 / 회원가입  등등
 
@@ -24,6 +23,8 @@ class NetworkManager
     enum APIType: String {
         case login
         case signup
+        case feed
+        case post
         
         var baseURL: String {
             return "http://api-ios-dev.ap-northeast-2.elasticbeanstalk.com/api/"
@@ -34,6 +35,10 @@ class NetworkManager
                 return baseURL + "member/login/"
             case .signup:
                 return baseURL + "member/signup/"
+            case .feed:
+                return baseURL + "post/"
+            case .post:
+                return baseURL + "post/"
             }
         }
     }
@@ -88,6 +93,73 @@ class NetworkManager
 //        <#function body#>
 //    }
 //    
+    // MARK: With Alamofire
+    func requestPostFromAlamofire(completion: @escaping ([PostDataprams]?) -> Void) {
+        
+        let postURL = URL(string: APIType.feed.getURL)!
+        
+        let header: HTTPHeaders = [
+            "Authorization": "token \(token!)"
+        ]
+        
+        Alamofire
+            .request(
+                postURL,
+                headers: header
+            )
+            .responseData { response in
+                switch response.result {
+                case .success(let value):
+                    let model = try! JSONDecoder().decode([PostDataprams].self, from: value)
+                    completion(model)
+                case .failure(let error):
+                    print(error)
+                    completion(nil)
+                }
+            }
+        
+    }
+    
+    func post(title: String, content: String?, image: UIImage?, completion: @escaping (Bool) -> Void) {
+        
+        let url = URL(string: APIType.post.getURL)!
+        let header: HTTPHeaders = [
+            "Authorization": "token \(token!)"
+        ]
+        
+        
+        Alamofire.upload(
+            multipartFormData: { multipart in
+                if let titleData = title.data(using: .utf8) {
+                    multipart.append(titleData, withName: "title")
+                }
+                if let contentData = content?.data(using: .utf8) {
+                    multipart.append(contentData, withName: "content")
+                }
+                
+                let imageData = UIImageJPEGRepresentation(image!, 0.5)!
+                multipart.append(imageData, withName: "image.jpeg", mimeType: "image/jpeg")
+            },
+            to: url,
+            method: .post,
+            headers: header,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let request, _, _):
+                    request
+                        .response(completionHandler: { _ in
+                            print("success")
+                        })
+                    completion(true)
+                case .failure(let error):
+                    print(error)
+                    completion(false)
+                }
+            })
+        
+        
+    }
+    
     
     // MARK: 사진 받아오기
     func requestGet(completion: @escaping (Bool, [PostDataprams]?)-> Void)

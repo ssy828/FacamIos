@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 회원가입메인페이지로 나오고!
       
         if NetworkManager.one.isLogin {
-            
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainNavi = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigation") as! UINavigationController
+            self.window?.rootViewController = mainNavi
         } else {
             
         }

@@ -10,16 +10,6 @@ class DetailViewController: UIViewController {
     let picker = UIImagePickerController()
     
     @IBOutlet weak var imageView: UIImageView!
-
-    @IBAction func addPhoto(_ sender: Any)
-    {
-        let alertController = Alert.showAlert(title: "사진앨범", msg: "사진앨범", actionStyle: UIAlertActionStyle.default, cancelAction: false) {[weak self] _ in
-            guard let `self` = self else {return}
-            self.openLibrary()
-            
-        }
-        self.present(alertController, animated: false, completion: nil)
-    }
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -34,7 +24,24 @@ class DetailViewController: UIViewController {
         picker.sourceType = .photoLibrary
         present(picker, animated: true, completion: nil)
     }
-  
+    
+    // MARK: 사진 저장후 메소드
+    @IBAction func saveAll(_ sender: Any)
+    {
+        
+    }
+    
+    
+    // MARK: 사진 바뀌는 메소드
+    @IBAction func addPhoto(_ sender: Any)
+    {
+        let alertController = Alert.showAlert(title: "사진앨범", msg: "사진앨범", actionStyle: UIAlertActionStyle.default, cancelAction: false) {[weak self] _ in
+            guard let `self` = self else {return}
+            self.openLibrary()
+            
+        }
+        self.present(alertController, animated: false, completion: nil)
+    }
 
 }
 

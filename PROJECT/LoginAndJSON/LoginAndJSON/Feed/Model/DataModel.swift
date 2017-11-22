@@ -24,7 +24,7 @@ struct PostDataprams: Codable
         // title과 위의 프로퍼티 변수명과 같아야함!
         case title
         case content
-        case imgCover = "img_Cover"
+        case imgCover = "img_cover"
     }
     
 //    init?(dataDic: [String: String])
