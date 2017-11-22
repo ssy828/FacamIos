@@ -89,7 +89,7 @@
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="JdY-E0-wK3">
                             <connections>
                                 <action selector="addButton:" destination="W6X-fa-vBg" id="uDf-tx-uxK"/>
-                                <segue destination="Hhh-IZ-aPb" kind="show" id="XiG-lu-j2J"/>
+                                <segue destination="Hhh-IZ-aPb" kind="show" identifier="DetailSegue" id="XiG-lu-j2J"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -169,6 +169,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="7Nx-4g-2J9" id="W4A-xE-3Qd"/>
+                        <outlet property="textView" destination="WNR-wL-fh8" id="JNm-3e-oEq"/>
+                        <outlet property="titleLB" destination="BvU-Xa-lTx" id="w9f-MB-2Oz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sLG-PE-uTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -34,6 +34,13 @@ class TableViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailSegue" {
+            let destination = segue.destination as! DetailViewController
+            destination.delegate = self
+        }
+    }
+    
     @objc private func refreshTableView(_ sender: UIRefreshControl) {
         data.requestPostFromAlamofire { [weak self] data in
             sender.endRefreshing()
@@ -58,7 +65,10 @@ extension TableViewController: UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! FeedCell
         cell.idLB.text = cellData.title
         cell.contentsLB.text = cellData.content
-        cell.imgView.setImageFromServer(at: cellData.imgCover!)
+        if let imgString = cellData.imgCover {
+            cell.imgView.setImageFromServer(at: imgString)
+        }
+        
         return cell
     }
     
@@ -70,6 +80,16 @@ extension TableViewController: UITableViewDataSource
 extension TableViewController: UITableViewDelegate
 {
     
+}
+
+extension TableViewController: DetailViewControllerDelegate {
+    
+    func didFinishPost(_ viewcontroller: DetailViewController) {
+        data.requestPostFromAlamofire { [weak self] data in
+            self?.source = data
+            self?.tableView.reloadData()
+        }
+    }
 }
 
 

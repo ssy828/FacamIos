@@ -1,4 +1,4 @@
-//
+
 //  NetworkManager.swift
 //  LoginAndJSON
 //
@@ -7,15 +7,7 @@ import UIKit
 import Alamofire
 
 // enum -> url 정리 : 로그인 / 회원가입  등등
-
 //typealias Completion = ( _ isSucced: Bool, _ resultvalue: Any, _ error: Error ) -> Void
-
-// 클로저 안에서  let code = (response as! HTTPURLResponse).statusCode
-
-
-let base = "http://api-ios-dev.ap-northeast-2.elasticbeanstalk.com/api"
-//let logInURL = "/member/login/"
-//let signUpURL = "/member/signup/"
 
 class NetworkManager
 {
@@ -88,11 +80,7 @@ class NetworkManager
               completion: completion)
     }
     
-    // MARK: Alamofire 사용 코드
-//    func fechLoginWithAF(userID: ) -> <#return type#> {
-//        <#function body#>
-//    }
-//    
+    
     // MARK: With Alamofire
     func requestPostFromAlamofire(completion: @escaping ([PostDataprams]?) -> Void) {
         
@@ -116,10 +104,10 @@ class NetworkManager
                     print(error)
                     completion(nil)
                 }
-            }
+        }
         
     }
-    
+    // MARK: Post With Alamofire
     func post(title: String, content: String?, image: UIImage?, completion: @escaping (Bool) -> Void) {
         
         let url = URL(string: APIType.post.getURL)!
@@ -138,8 +126,8 @@ class NetworkManager
                 }
                 
                 let imageData = UIImageJPEGRepresentation(image!, 0.5)!
-                multipart.append(imageData, withName: "image.jpeg", mimeType: "image/jpeg")
-            },
+                multipart.append(imageData, withName: "img_cover", fileName: "\(title).jpeg", mimeType: "image/jpeg")
+        },
             to: url,
             method: .post,
             headers: header,
@@ -149,72 +137,17 @@ class NetworkManager
                     request
                         .response(completionHandler: { _ in
                             print("success")
+                            completion(true)
                         })
-                    completion(true)
+                    
                 case .failure(let error):
                     print(error)
                     completion(false)
                 }
-            })
-        
+        })
         
     }
     
-    
-    // MARK: 사진 받아오기
-    func requestGet(completion: @escaping (Bool, [PostDataprams]?)-> Void)
-    {
-        guard let tokenKey = token else { return }
-        let url = URL(string: base + "/post/")
-        var request = URLRequest(url: url!)
-        request.httpMethod = "GET"
-        request.addValue("Token \(tokenKey)", forHTTPHeaderField: "Authorization")
-        
-        let task = URLSession.shared.dataTask(with: request) {  (data, reponse, error) in
-            if let data = data {
-                do{
-//                    guard let json = JSONSerialization.jsonObject(with: data, options: []) as? [[String: String]]
-//                    // let data : [Dataprams] = []
-                    let decoder = JSONDecoder()
-                    let model = try decoder.decode([PostDataprams].self, from: data)
-                    completion(true, model) // 데이터를 클로저를 통해서 보낼 것이므로
-                }catch {
-                    completion(false, nil)
-                }
-            }
-        }
-        task.resume()
-    }
-    // MARK: 사진 보내기(업로드) : 사진,텍스트 등등 따로 보낼 필요가 없음
-    private func requestPost(post: PostDataprams, img: UIImage, completion: @escaping (Bool)->Void)
-    {
-        guard let tokenKey = token else { return }
-        let url = URL(string: base + "/post/")
-        var request = URLRequest(url: url!)
-        request.httpMethod = "POST"
-        request.addValue("Token \(tokenKey)", forHTTPHeaderField: "Authorization")
-        let boundary = "Boundary-\(UUID().uuidString)"
-        request.setValue("multipart/form-data; Boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-        
-         let filename = String(Date().timeIntervalSince1970) + ".jpeg"
-        // multipart로 이미지 전환
-        let body = createBody(parameters: post.param, boundary: boundary, data: UIImageJPEGRepresentation(img, 0.5)!, dataType: "img_cover", mineType: "image/jpeg", fileName: filename)
-        request.httpBody = body
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let data = data
-            {
-                do{
-                    // 데이터를 어떻게 넘겨야 하나...
-                    // 데이터를 받는 곳이 아니라... 그냥 이쪽만 하면 됨
-                   completion(true)
-                }catch{
-                    completion(false)
-                }
-            }
-        }
-        task.resume()
-    }
     // MARK: API 목록 : Member
     private func fetch(page: String, statusCode: Int, httpsMethod: String, httpbody: Data, completion:  @escaping (Bool)-> Void)
     {
@@ -247,48 +180,4 @@ class NetworkManager
         }
         task.resume()// 대기 상태
     }
-    // ????
-    // MARK: multipart : data 만들기
-    // : 여러곳에서 사용할 경우 대비해 메소드로 만들어 놓음
-    // 이미지를 보내기 위해서
-    // 서로 다른 데이터 타입을 합쳐서 보내는 것: multipart Form 
-    private func createBody(parameters: [String: String],
-                            boundary: String,
-                            data: Data,
-                            dataType: String,
-                            mineType: String,
-                            fileName: String ) -> Data {
-        var body = Data()
-        let boundaryPrefix = "--\(boundary)\r\n"
-        for (key, value) in parameters{
-            body.appendString(boundaryPrefix)
-            body.appendString("Content-Disposition: form-data; name=\"\(key)\"")
-            body.appendString("\r\n")
-            body.appendString("\r\n")
-            body.appendString("\(value)")
-            body.appendString("\r\n")
-        }
-        body.appendString(boundaryPrefix)
-        body.appendString("Content-Disposition: form-data; name=\"\(dataType)\"; filename=\"\(fileName)\"")
-        body.appendString("\r\n")
-        body.appendString("Content-Type: \(mineType)")
-        body.appendString("\r\n")
-        body.appendString("\r\n")
-        body.append(data)
-        body.appendString("\r\n")
-        
-        body.appendString("--\(boundary)--")
-        
-        return body
-    }
 }
-
-extension Data
-{
-    mutating func appendString(_ string: String)
-    {
-        guard let data = string.data(using: .utf8, allowLossyConversion: false) else { return }
-        append(data)
-    }
-}
-
