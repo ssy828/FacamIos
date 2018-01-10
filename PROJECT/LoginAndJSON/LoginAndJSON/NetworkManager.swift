@@ -35,7 +35,7 @@ class NetworkManager
         }
     }
     // 싱글턴 패턴
-    static let one: NetworkManager = NetworkManager()
+  
     // 토큰값
     private let tokenKey = "key"
     // 토큰을 연산 프로퍼티 사용해 바로 값을 가져오고 넣어줄 것임

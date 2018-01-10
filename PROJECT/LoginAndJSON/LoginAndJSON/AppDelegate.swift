@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 이곳에 저장해 두기 자동으로 로그인 가능하게 만들기
         // 토큰을 넣었을때 그 값을 가져오고 사용자 인증
         // 회원가입메인페이지로 나오고!
-      
         if NetworkManager.one.isLogin {
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let mainNavi = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigation") as! UINavigationController
