@@ -27,7 +27,6 @@ class InputViewController: UIViewController {
             let name = tf.text ?? ""
             DataCenter.mainCenter.addName(name)
         
-            // ???
             self.navigationController?.popViewController(animated: true)
     }
     

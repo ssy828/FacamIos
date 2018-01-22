@@ -17,16 +17,11 @@ class ViewController: UIViewController {
        
         NotificationCenter.default.addObserver(forName: Notification.Name.init("TestNoti"), object: nil, queue: nil) {
             (noti) in
-//            print(noti.object)
-            if let text = noti.object as? String
-            {
+            if let text = noti.object as? String {
                 self.Lb.text = text
             }
         }
     }
-
-   
-
 
 }
 

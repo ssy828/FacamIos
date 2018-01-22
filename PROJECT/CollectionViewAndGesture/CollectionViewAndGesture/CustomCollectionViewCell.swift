@@ -8,8 +8,7 @@
 
 import UIKit
 
-class CustomCollectionViewCell: UICollectionViewCell
-{
+class CustomCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var Lb: UILabel!
     

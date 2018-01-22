@@ -14,14 +14,13 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     
         tv.reloadData() // 리로드
     
     }
     // 보여지기 전에 셋팅을 하고 보여지게 하기 위해
-    override func viewWillAppear(_ animated: Bool)
-    { // 이거 없으면 처음 읽었던 상태로 ui를 업데이트하지 않는다.
+    override func viewWillAppear(_ animated: Bool) {
+        // 이거 없으면 처음 읽었던 상태로 ui를 업데이트하지 않는다.
         super.viewWillAppear(animated)
     }
 

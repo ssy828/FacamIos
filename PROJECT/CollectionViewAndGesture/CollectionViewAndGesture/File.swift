@@ -2,8 +2,7 @@
 import Foundation
 
 
-class Test
-{
+class Test {
     var test = ["a","b","c","d"]
     var temp = ""
     func array()

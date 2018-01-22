@@ -37,13 +37,11 @@ class ViewController: UIViewController {
         
     }
     // 버튼의 핸들러
-    @objc func nextBtn(_ sender: UIButton)
-    {
+    @objc func nextBtn(_ sender: UIButton) {
         goToNextVC()
     }
 
-    private func goToNextVC()
-    {
+    private func goToNextVC() {
         // 다음 뷰컨트롤러로 push!
         let nextVC: UIViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
         // self: 내 뷰컨트롤러임

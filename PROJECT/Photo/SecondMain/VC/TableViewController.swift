@@ -27,8 +27,7 @@ class TableViewController: UIViewController {
 }
 
 // MARK: UITableViewDataSource
-extension TableViewController: UITableViewDataSource
-{
+extension TableViewController: UITableViewDataSource {
     // 섹션 개수
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -54,7 +53,6 @@ extension TableViewController: UITableViewDataSource
 }
 
 // MARK:
-extension TableViewController: UITableViewDelegate
-{
+extension TableViewController: UITableViewDelegate {
     
 }

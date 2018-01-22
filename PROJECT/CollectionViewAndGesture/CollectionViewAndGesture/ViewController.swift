@@ -1,10 +1,7 @@
 //
 //  ViewController.swift
 //  CollectionViewAndGesture
-//
-//  Created by SONGYEE SHIN on 2017. 10. 27..
-//  Copyright © 2017년 SONGYEE SHIN. All rights reserved.
-//
+
 
 import UIKit
 
@@ -34,22 +31,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 // MARK: UICollectionViewDataSource
 
-extension ViewController: UICollectionViewDataSource
-{
+extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return one.lbList.count
     }
@@ -65,8 +52,7 @@ extension ViewController: UICollectionViewDataSource
     
 }
 // MARK: UICollectionViewDelegateFlowLayout
-extension ViewController: UICollectionViewDelegateFlowLayout
-{
+extension ViewController: UICollectionViewDelegateFlowLayout {
     // MARK: 아이템 사이즈
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.size.width/3

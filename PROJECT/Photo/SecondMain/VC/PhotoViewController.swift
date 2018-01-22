@@ -71,8 +71,7 @@ extension PhotoViewController
     }
 }
 // MARK: UIImagePickerControllerDelegate
-extension PhotoViewController: UIImagePickerControllerDelegate
-{
+extension PhotoViewController: UIImagePickerControllerDelegate {
     
     // 사진을 선택후 불리는 델리게이트
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -92,8 +91,7 @@ extension PhotoViewController: UIImagePickerControllerDelegate
 }
 
 // MARK:
-extension PhotoViewController: UINavigationControllerDelegate
-{
+extension PhotoViewController: UINavigationControllerDelegate{
     
 }
 

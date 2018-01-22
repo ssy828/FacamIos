@@ -42,7 +42,7 @@ class ViewController: UIViewController,UIScrollViewDelegate,UITableViewDataSourc
 //    }() // 만들자마자 클로저가 바로 실행 ( ) 이거때문에
     
     // 테이블뷰 만들기 -> 테이블뷰 : 컨텐츠뷰 사이즈 정할 필요 없다!
-    func makeTableVie()  {
+    func makeTableVie() {
         let tableView: UITableView = UITableView(frame: CGRect(x:0,y:0,width:view.frame.size.width, height:view.frame.size.height), style: .plain)
         // 스타일 지정해주는 게 좋음
        
@@ -66,8 +66,7 @@ class ViewController: UIViewController,UIScrollViewDelegate,UITableViewDataSourc
     // 셀에 해당하는 UI가 무엇인지 uiView cell타입으로 주는 것
     // 이곳은 데이터만 넣어줄 것
     // 내가 필요한 것만 부를께 그때만 생성해줘!
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.section
         
         let cell = UITableViewCell()
@@ -85,8 +84,7 @@ class ViewController: UIViewController,UIScrollViewDelegate,UITableViewDataSourc
     }
     
     // 뷰를 만들고 추가하는 역할
-    func createView()
-    {
+    func createView() {
 //         closer()
 //
 //        view.addSubview(subView2)
@@ -145,14 +143,13 @@ class ViewController: UIViewController,UIScrollViewDelegate,UITableViewDataSourc
         
         
     }
-    @objc func btnAction(_ sender: UIButton)
-    {
-        
+    
+    @objc func btnAction(_ sender: UIButton){
+        // ToDo
     }
     
     // 레이아웃에 대한 정리만 하는 것
-    func updateLayout()
-    {
+    func updateLayout() {
         let screenSizeWidth: CGFloat = view.frame.size.width
         let viewWidth: Int = 200
         subView?.frame = CGRect(x: 0, y: 0, width: viewWidth, height: viewWidth)
