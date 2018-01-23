@@ -35,20 +35,16 @@ class ViewController: UIViewController {
 
 }
 // MARK
-extension ViewController: MKMapViewDelegate
-{
+extension ViewController: MKMapViewDelegate {
     // MARK: pin 만들기
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if let annotation = annotation as? CustomAnnotation
-        {
+        if let annotation = annotation as? CustomAnnotation {
             let id = "pin"
             var pinView: MKPinAnnotationView
-            if let dequeueView = mapView.dequeueReusableAnnotationView(withIdentifier: id) as? MKPinAnnotationView
-            {
+            if let dequeueView = mapView.dequeueReusableAnnotationView(withIdentifier: id) as? MKPinAnnotationView {
                 dequeueView.annotation = annotation
                 pinView = dequeueView
-            }else
-            {
+            }else{
                 pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
                 pinView.canShowCallout = true
                 pinView.calloutOffset = CGPoint(x: -5, y: 5)

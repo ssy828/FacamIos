@@ -5,9 +5,10 @@
 import Foundation
 
 let userdefaultsForkey = "dataList"
+
 class DataManager {
     // 싱글턴 패턴
-    static var single = DataManage()
+    static var single = DataManager()
     
     var photoList: [PhotoModel] = []
     
@@ -16,8 +17,7 @@ class DataManager {
     // 사진 정보 저장
     private func loadData() {
         guard let list = UserDefaults.standard.value(forKey: userdefaultsForkey) as? [[String: Any]] else { return }
-        for photo in list
-        {
+        for photo in list {
             if let onePhoto = PhotoModel(dataDic: photo)
             {
                 photoList.append(onePhoto)
@@ -29,8 +29,7 @@ class DataManager {
     func addPhoto() {
         // 사진을 저장할 딕셔너리 형태의 배열?
         var list: [Any] = []
-        for photo in list
-        {
+        for photo in list {
             list.append(photo)
         }
         UserDefaults.standard.set(list, forKey: userdefaultsForkey)

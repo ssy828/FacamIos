@@ -6,8 +6,7 @@
 import Foundation
 import MapKit
 
-class CustomAnnotation: NSObject, MKAnnotation
-{
+class CustomAnnotation: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     
     var title: String?

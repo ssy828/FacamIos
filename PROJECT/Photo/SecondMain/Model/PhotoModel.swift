@@ -11,8 +11,7 @@ struct PhotoModel{
     var title: String
     var imageData: Data
     
-    // 데이터를 딕셔너리로 만듦 ??
-    // ??
+    // 데이터를 딕셔너리로 만듦
     var dataDic: [String: Any] {
         return ["name": title, "imageData": imageData]
     }
