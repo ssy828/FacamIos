@@ -13,9 +13,6 @@ class ViewController: UIViewController,UIScrollViewDelegate {
     var scrollView: UIScrollView!
     override func viewDidLoad() { // 메모리에 들어가는 부분
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
         let rect: CGRect = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height/2)
         scrollView = UIScrollView(frame:rect)
         scrollView.delegate = self
@@ -53,13 +50,7 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         
     }
    
-   @objc func valueChangeSwitcher(_sender:UISwitch) {
-//        if {
-//
-//        }else{
-//
-//        }
-    }
+   @objc func valueChangeSwitcher(_sender:UISwitch) {  }
     // 애니메이션을 보여주기 위해서 이쪽으로 뺌
     // 뷰가 나타난 후에 보여주라
     override func viewDidAppear(_ animated: Bool) {
@@ -67,30 +58,12 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         scrollView.setContentOffset(CGPoint(x:500,y:0), animated: true)
         
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // 스크롤을 내릴때마다 실행
     func scrollViewDidScroll(_ scrollview:UIScrollView)  {
         let offsetX:CGFloat = scrollview.contentOffset.x
-        let colorValue = 1 - (offsetX - (scrollView.contentSize.width - scrollView.frame.size.width))
+        _ = 1 - (offsetX - (scrollView.contentSize.width - scrollView.frame.size.width))
         
         scrollView.backgroundColor = UIColor(red: offsetX/scrollView.contentSize.width, green: offsetX/scrollView.contentSize.width, blue: offsetX/scrollView.contentSize.width, alpha: 1 )
     }
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

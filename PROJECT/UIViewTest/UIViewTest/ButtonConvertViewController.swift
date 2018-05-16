@@ -100,7 +100,7 @@ class ButtonConvertViewController: UIViewController {
     @objc func btnConvertColor(_ sender: UIButton) {
        // tagArray = [sender.tag] // 미리 만든 태그 배열에  누른 버튼 태그를 넣기!
         sender.isSelected = !sender.isSelected // sender.isSelcted = true
-        // ->
+        
         
         switch sender.tag {
         case 1,3,5,7,9:

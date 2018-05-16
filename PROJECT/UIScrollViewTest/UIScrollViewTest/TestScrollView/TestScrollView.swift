@@ -14,16 +14,11 @@ class TestScrollView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    
         scrollView()
-        
     }
     
     // 스크롤뷰 예제
-    func scrollView()
-    {
+    func scrollView() {
         let rect: CGRect = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
         scroll = UIScrollView(frame: rect)
         scroll.contentSize = CGSize(width: view.frame.size.width*3, height: view.frame.size.height)// 사이즈조정(컨텐츠뷰)조정해 움직이기
@@ -48,17 +43,4 @@ class TestScrollView: UIViewController {
         scroll.addSubview(view3)
     }
     
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
