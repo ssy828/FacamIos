@@ -8,8 +8,7 @@ import UIKit
 // 내부적으로 코드로 만들 것
 
 // MARK: 프로토콜 생성
-@objc protocol SYCalendarDelegate
-{
+@objc protocol SYCalendarDelegate {
     @objc optional func calendar(_ caalendar: SYCalendar, didSelectedDate: Date)
 }
 
@@ -83,31 +82,26 @@ class SYCalendar: UIView {
 
 }
 // MARK: 메소드
-extension SYCalendar
-{
-    func nextMonth()
-    {
+extension SYCalendar{
+    func nextMonth(){
         
         // 데이트에 다음달 값을 할당: 데이터 모델을 이용해
 //        date = SYCalendarManager.nextMonth(with: calendarData!)
         date = SYCalendarManager.nextMonth(with: date!)
     }
-    func previousMonth()
-    {
+    func previousMonth(){
         date = SYCalendarManager.previousMonth(with: date!)
     }
 }
 
 
 // MARK: UICollectionViewDelegateFlowLayout : UICollectionViewDelegate 상속받음
-extension SYCalendar : UICollectionViewDelegateFlowLayout
-{
+extension SYCalendar : UICollectionViewDelegateFlowLayout {
   
     // MARK: UI관련 준비하는 곳
-   private func setUpUI()
-    {
+   private func setUpUI() {
         self.addSubview(contentView) // 컬렉션뷰 추가
-        contentView.delegate = self
+    contentView.delegate = self as! UICollectionViewDelegate
         contentView.dataSource = self
         
         // 셀을 보일 클래스 등록해야함!
@@ -120,8 +114,7 @@ extension SYCalendar : UICollectionViewDelegateFlowLayout
     }
     
     // MARK: 컬렉션뷰의 레이아웃잡기
-    private func updateLayout( )
-    {
+    private func updateLayout( ){
         contentView.constraint(targetView: self, topConstant: 0, bottomConstant: 0, leftConstant: 0, rightConstant: 0 )
         // self: SYCalendar
     }
@@ -172,11 +165,9 @@ extension SYCalendar : UICollectionViewDataSource{
         
         if section == 0 {
             return 7
-        }else
-        {
+        }else{
             
-            if let calendarData = calendarData
-            {
+            if let calendarData = calendarData {
                  // 캘린더 빈칸을 채워야하므로
                 return calendarData.lastDayOFMonth + calendarData.startWeekOfMonth.rawValue
             }else{
@@ -203,8 +194,7 @@ extension SYCalendar : UICollectionViewDataSource{
         }else{
            let changedIndex = indexPath.item - calendarData!.startWeekOfMonth.rawValue
             // ???
-            if changedIndex >= 0
-            {
+            if changedIndex >= 0 {
                 let day = changedIndex + 1
                 cell.titleLb.text = "\(day)"
             }
@@ -217,8 +207,7 @@ extension SYCalendar : UICollectionViewDataSource{
 }
 
 // MARK: CustomCell
-class CustomCell: UICollectionViewCell
-{
+class CustomCell: UICollectionViewCell {
     // awakeFromNib이 일어날 필요 없음. 자동적으로 만들어지므로
     
     // 클로저 -> 내부에서 바로 쓸 것이므로
@@ -235,10 +224,8 @@ class CustomCell: UICollectionViewCell
     // 데이트?
     var date: Date?
     
-    func resetInit()
-    {
+    func resetInit(){
         titleLb.text = ""
-        
     }
     
     override init(frame: CGRect) {
@@ -248,15 +235,13 @@ class CustomCell: UICollectionViewCell
     }
     // MARK: addSubview먼저하고
     // 오토레이아웃 잡기!
-    private func setUpUI()
-    {
+    private func setUpUI() {
         self.addSubview(titleLb) // 라벨추가
         updateLBLayout( )
     }
     
     // MARK: 라벨 레이아웃잡기
-    private func updateLBLayout( )
-    {
+    private func updateLBLayout( ){
         titleLb.constraint(targetView: self, topConstant: 0, bottomConstant: 0, leftConstant: 0, rightConstant: 0 )
         // self: CustomCell
     }
@@ -268,11 +253,9 @@ class CustomCell: UICollectionViewCell
 }
 
 // MARK: 간격? 구하는 메소드
-extension UIView
-{
+extension UIView{
     // MARK: constraint메소드 
-    func constraint(targetView: UIView, topConstant: CGFloat?, bottomConstant: CGFloat?, leftConstant: CGFloat?, rightConstant: CGFloat? )
-    {
+    func constraint(targetView: UIView, topConstant: CGFloat?, bottomConstant: CGFloat?, leftConstant: CGFloat?, rightConstant: CGFloat? ) {
         self.translatesAutoresizingMaskIntoConstraints = false
         // 오토레이아웃 적용
         

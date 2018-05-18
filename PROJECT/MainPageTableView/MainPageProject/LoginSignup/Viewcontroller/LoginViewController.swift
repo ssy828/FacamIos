@@ -38,8 +38,7 @@ class LoginViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @objc func keyboardWillShow(notification: Notification)
-    {
+    @objc func keyboardWillShow(notification: Notification) {
          // 키보드가 보여질때를 대비하는 곳!!
         
         guard let userInfo = notification.userInfo else {return}
