@@ -86,8 +86,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
     // 내가 지금 지정한 셀의 위치
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let colorName = color[indexPath.row] // 눌린 셀의 위치 , 텍스트의 위치
     
         // 알러트 창 띄우기

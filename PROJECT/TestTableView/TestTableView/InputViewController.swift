@@ -22,8 +22,7 @@ class InputViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func saveBtnHandler(_ sender: UIButton)
-    {
+    @IBAction func saveBtnHandler(_ sender: UIButton) {
             let name = tf.text ?? ""
             DataCenter.mainCenter.addName(name)
         

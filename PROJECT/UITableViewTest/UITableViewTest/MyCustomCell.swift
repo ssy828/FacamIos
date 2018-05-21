@@ -24,23 +24,20 @@ class MyCustomCell: UITableViewCell {
     }
     
     // 뷰 생성
-    func createView()
-    {
+    func createView(){
         bgImageView = UIImageView() // 인스턴스 생성
         self.addSubview(bgImageView!)
     }
     
-    func setImage(name: String)
-    {
+    func setImage(name: String){
         bgImageView?.image = UIImage(named:name)
     }
-    override func layoutSubviews() // 현재 있는 MyCustomCell에 있는 모든 뷰가 바뀌면 실행
-    { // 자기 스스로 변경
+    // 현재 있는 MyCustomCell에 있는 모든 뷰가 바뀌면 실행
+    override func layoutSubviews(){ // 자기 스스로 변경
         super.layoutSubviews()
         updateLayout()
     }
-    func updateLayout()
-    {
+    func updateLayout(){
         bgImageView?.frame = self.bounds // self MyCustomCell인스턴스?
     }
 
@@ -50,7 +47,5 @@ class MyCustomCell: UITableViewCell {
 //        // ViewDidLoad와 같음
 //        // Initialization code
 //    }
-
-  
 
 }
