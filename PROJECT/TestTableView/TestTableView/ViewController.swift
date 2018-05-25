@@ -34,11 +34,8 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
         let name: String = DataCenter.mainCenter.nameList[indexPath.row]
-        
         cell.textLabel?.text = name
-        
         return cell
     }
 

@@ -3,8 +3,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    func getMaxCount(list:[String : Int]) -> Int
-    {
+    func getMaxCount(list:[String : Int]) -> Int {
         
         var index: Int = 0
         for (_, value) in list {
@@ -15,8 +14,7 @@ class ViewController: UIViewController {
         return index
     }
     
-    func getMaxCount2(list:[String : String]) -> Int
-    {
+    func getMaxCount2(list:[String : String]) -> Int {
         var score: Int = 0
         for ( _, kkk ) in list {
             if let num = Int(kkk)
@@ -35,8 +33,7 @@ class ViewController: UIViewController {
     }
     
     //카 이름 리턴
-    func getMaxCarName(list:[String : Any]) -> String
-    {
+    func getMaxCarName(list:[String : Any]) -> String{
         //딕셔너리 벗기기
         
         var maxCarSrore: Int = 0
@@ -86,18 +83,11 @@ class ViewController: UIViewController {
     
     
     
-    
-    
-    
     /*
     첫번째는 리스트(딕셔너리)를 받아서 가장 높은 숫자를 리턴하는 것이고
     두번째도 같지만 이번엔 값이 String이구요
     세번째는 복잡한 구조의 딕셔너리에서 가장 높은 수의 카 이름을 반환하는 문제입니다.*/
-    
-   
 
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

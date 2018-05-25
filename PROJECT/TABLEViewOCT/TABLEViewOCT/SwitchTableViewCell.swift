@@ -31,8 +31,7 @@ class SwitchTableViewCell: UITableViewCell {
     }
     
     
-    @IBAction func switchChanged(_ sender: UISwitch)
-    {
+    @IBAction func switchChanged(_ sender: UISwitch){
         print(sender.isOn)
         // self: switchTableViewCell 인스턴스
         delegate?.switchTableViewCell(self, didChangedSwitch: sender.isOn)
@@ -40,7 +39,6 @@ class SwitchTableViewCell: UITableViewCell {
 
 }
 
-protocol SwitchTableViewCellDelegate
-{
+protocol SwitchTableViewCellDelegate {
     func switchTableViewCell(_ cell: SwitchTableViewCell, didChangedSwitch value: Bool)
 }

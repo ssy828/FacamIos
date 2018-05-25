@@ -46,12 +46,10 @@ class MainViewController: UIViewController, UITableViewDataSource {
         // 재사용하기위해 스토리보드에 "cell"입력
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileTableViewCell
         // 각 Row마다 데이터가 표시될 템플릿 아까만든 ProfileTableViewCell이고, ProfileTableViewCell class로 다운 캐스팅하여 프로퍼티에 접근
-        
         let profileModel:ProfileModel = dataManager!.profilesData[indexPath.row]
         // 각 프로퍼티에 들어갈 데이터를 적용함
         cell.data = profileModel
         // 셀에 데이터를 넣은 것
-        
         // 셀한테 데이터를 주고 다 표시해
         // 뷰컨트롤러: 데이터가 필요할때만 달라고 하는 것
         cell.textLabel?.text = profileModel.nickname
@@ -68,7 +66,6 @@ class MainViewController: UIViewController, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let cell = sender as? ProfileTableViewCell else {return}
         guard let nextVC = segue.destination as? DetailViewController else {return}
-        
         nextVC.data = cell.data
     }
     // 세그: 객체를 누른 sender:

@@ -3,8 +3,7 @@
 import Foundation
 
 // 유저 한명의 정보
-struct User
-{
+struct User {
     let username: String
     var email: String
     var pwd: String
@@ -19,16 +18,13 @@ struct User
     }
 }
 
-struct Users
-{
+struct Users {
     var users: [User] // user구조체의 묶음(배열)
-    
     // [String:Any]으로 하면 -> 타입캐스팅 [String:Any] 또 해야함!
 //    init(dic: [String: [[String:Any]]])
     init(dic: [String:Any]) {
         self.users = []
         guard let users = dic["item"] as? [[String:Any]] else { return }
-        
         for user in users{
             self.users.append(User(dictionary: user)!)
         }

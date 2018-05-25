@@ -25,13 +25,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
      // 우리가 이동할때 셀이 움직이는 것
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tv.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SwitchTableViewCell
         cell.delegate = self // self: 뷰컨트롤러
         cell.textLabel?.text = "\(indexPath.row)"
         cell.switchData = onOffList[indexPath.row]
         cell.indexPath = indexPath
-        
         return cell
     }
     
