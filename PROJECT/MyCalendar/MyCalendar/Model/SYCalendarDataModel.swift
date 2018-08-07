@@ -124,7 +124,7 @@ class SYCalendarManager
     
     func newDate(of day: Int )
     {
-        
+
     }
 }
 

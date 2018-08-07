@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         
         currentValue = displayA.text!
         op = (btn.titleLabel?.text)!
-        resultValue = Double(currentValue)!     // 현재 레이블에 입력돼 있는 문자열을 더블로 바꿔서 초기화
+        resultValue = Double(currentValue)!    // 현재 레이블에 입력돼 있는 문자열을 더블로 바꿔서 초기화
         isOpPressed = true // 연산자를 누름 표시
         
         //        inputString = displayA.text! // 처음 넣은 숫자 라벨에 표시를 변수에 저장

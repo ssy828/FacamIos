@@ -39,11 +39,9 @@ class UpgradeCalculatorViewController: UIViewController {
       // 화면 정리 필요시
         let inputNum = Double(btn.tag) // tag: Int형만 가능
         
-        if let newNumber = displayNumber
-        {
+        if let newNumber = displayNumber {
             displayNumber = (newNumber * digit) + inputNum
-        }else
-        {
+        }else{
             // 처음 계산을 시작할때는 값이 없으므로
            displayNumber = inputNum
         }
